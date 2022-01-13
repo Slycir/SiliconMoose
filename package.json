@@ -1,0 +1,18 @@
+{
+  "name": "bottemplate",
+  "version": "1.0.0",
+  "description": "Template for future Discord.js bots",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^13.5.0",
+    "discord-api-types": "^0.26.1",
+    "eslint": "^8.6.0",
+    "events": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

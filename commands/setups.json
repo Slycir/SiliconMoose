@@ -1,0 +1,35 @@
+{
+    "setups": [
+        ["const { SlashCommandBuilder } = require('@discordjs/builders');",
+            "",
+            "module.exports = {",
+            "\tdata: new SlashCommandBuilder()",
+            "\t\t.setName('${commandName}')",
+            "\t\t.setDescription('${commandDesc}'),",
+            "\tasync execute(interaction) {",
+            "\t\treturn interaction.reply('${commandText}');",
+            "\t},",
+            "};",
+            "//This was made with the create command"],
+        ["const { SlashCommandBuilder } = require('@discordjs/builders');",
+            "const { MessageActionRow, MessageButton } = require('discord.js');",
+            "",
+            "module.exports = {",
+            "\tdata: new SlashCommandBuilder()",
+            "\t\t.setName('${commandName}')",
+            "\t\t.setDescription('${commandDesc}'),",
+            "\tasync execute(interaction) {",
+            "\t\tconst row = new MessageActionRow()",
+            "\t\t\t.addComponents(",
+            "\t\t\t\tnew MessageButton()",
+            "\t\t\t\t\t.setLabel('${commandLinkLabel}')",
+            "\t\t\t\t\t.setStyle('LINK')",
+            "\t\t\t\t\t.setURL('${commandLink}'),",
+            "\t\t\t);",
+            "\t\treturn interaction.reply({ content: '${commandText}', components: [row]});",
+            "\t},",
+            "};",
+            "//This was made with the create command"]
+        
+    ]
+}
