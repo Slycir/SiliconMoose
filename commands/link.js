@@ -15,6 +15,6 @@ module.exports = {
                     .setStyle('LINK')
                     .setURL(interaction.options.getString('link')),
             );
-        return interaction.reply({components: [row]});
+        return interaction.reply({content: interaction.options.getString('link-text'), components: [row]});
     },
 };
