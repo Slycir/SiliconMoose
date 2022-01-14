@@ -22,7 +22,7 @@ module.exports = {
             return interaction.reply('No events played... *yet*');
         }
         var lastMatch = Matches[0]
-        var Match = await fetch(`${apiURL}/match/${lastMatch}/simple${auth}`);
+        var Match = await fetch(`${apiURL}/match/${lastMatch}/simple?${auth}`);
         for(x = 0; x < Match.alliances.blue.team_keys.length; x++){
             blueTeams += `${Match.alliances.blue.team_keys[x].substring(Match.alliances.blue.team_keys[x].length - 4)}\n`
         }
