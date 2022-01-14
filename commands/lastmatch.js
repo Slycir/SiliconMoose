@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const fetch = require('node-fetch');
-const { apiKey } = require('./config.json')
+const { apiKey } = require('./commandConfig.json')
 const auth = `X-TBA-Auth-Key=${apiKey}`
 const apiURL = 'https://www.thebluealliance.com/api/v3';
 const { MessageEmbed } = require('discord.js');
