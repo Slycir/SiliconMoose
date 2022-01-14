@@ -1,5 +1,3 @@
 config.json
-node_modules
-useless
-
-commands/commandConfig.json
+node_modules/
+useless/
