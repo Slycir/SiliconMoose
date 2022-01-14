@@ -4,7 +4,6 @@ const { apiKey } = require('./commandConfig.json')
 const auth = `X-TBA-Auth-Key=${apiKey}`
 const apiURL = 'https://www.thebluealliance.com/api/v3';
 const { MessageEmbed } = require('discord.js');
-const { match } = require('assert');
 
 // inside a command, event listener, etc.
 
@@ -18,11 +17,13 @@ module.exports = {
         var redTeams = ''
         var status = await fetch(`${apiURL}/status?${auth}`).then(response => response.json());
         var currentSeason = status.current_season
-        var Matches = await fetch(`${apiURL}/team/frc1391/matches/${currentSeason}/keys?${auth}`).then(response => response.json());
+        var Matches = await fetch(`${apiURL}/team/frc1391/matches/${currentSeason}/simple?${auth}`).then(response => response.json());
         if(Matches.length == 0){
             return interaction.editReply(`No matches played in ${currentSeason}... *yet*`);
         }
-        var lastMatch = Matches[0]
+        var lastMatch = Matches.reduce(function(prev, current) {
+            return (prev.actual_time > current.actual_time) ? prev : current
+        }).key
         console.log(lastMatch)
         var Match = await fetch(`${apiURL}/match/${lastMatch}?${auth}`).then(response => response.json());
         for(x = 0; x < Match.alliances.blue.team_keys.length; x++){
