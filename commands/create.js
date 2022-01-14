@@ -7,7 +7,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('create')
         .setDescription('Create a new command')
-        .addStringOption(option => option.setName('command-name').setDescription('Enter command name'))
+        .addStringOption(option => option.setName('command-name').setDescription('Enter command name( /[name here] )'))
         .addStringOption(option => option.setName('command-desc').setDescription('Enter command description'))
         .addStringOption(option => option.setName('command-type').setDescription('Enter command type').setChoices([['Link', 'link'], ['Text', 'text']]))
         .addStringOption(option => option.setName('command-text').setDescription('Enter command reply text'))
@@ -56,6 +56,6 @@ module.exports = {
               console.error(err)
             }
         });
-        return interaction.reply('Worked');
+        return interaction.reply(`Command created: /${commandName}`);
     },
 };
