@@ -4,7 +4,7 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('github')
-        .setDescription(''),
+        .setDescription('Important GitHub links.'),
     async execute(interaction) {
         const row = new MessageActionRow()
             .addComponents(
