@@ -25,7 +25,7 @@ module.exports = {
         }
         var lastMatch = Matches.reduce(function(prev, current) {
             return (prev.actual_time > current.actual_time) ? prev : current
-        }).key
+        }).key;
         console.log(lastMatch)
         var Match = await fetch(`${apiURL}/match/${lastMatch}?${auth}`).then(response => response.json());
         for(x = 0; x < Match.alliances.blue.team_keys.length; x++){
