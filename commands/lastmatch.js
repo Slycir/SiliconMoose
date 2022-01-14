@@ -18,7 +18,7 @@ module.exports = {
         var stor
         var color = '#4154B3'
         var status = await fetch(`${apiURL}/status?${auth}`).then(response => response.json());
-        var currentSeason = status.current_season
+        var currentSeason = 2019//status.current_season
         var Matches = await fetch(`${apiURL}/team/frc1391/matches/${currentSeason}/simple?${auth}`).then(response => response.json());
         if(Matches.length == 0){
             return interaction.editReply(`No matches played in ${currentSeason}... *yet*`);
