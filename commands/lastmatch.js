@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { matches } = require('lodash');
 const fetch = require('node-fetch');
 const { apiKey } = require('./config.json')
 const auth = `X-TBA-Auth-Key=${apiKey}`
