@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { SlashCommandBuilder } = require('@discordjs/builders');
-var bad = fs.readFile('./badidea.txt', err => {
+var bad = fs.readFile('./commands/badidea.txt', err => {
     if (err) {
       console.error(err)
     }
@@ -11,7 +11,7 @@ module.exports = {
         .setName('bad')
         .setDescription('Bad idea? clock it in.'),
     async execute(interaction) {
-        bad = fs.readFile('./badidea.txt', err => {
+        bad = fs.readFile('./commands/badidea.txt', err => {
             if (err) {
               console.error(err)
             }
