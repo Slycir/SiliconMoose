@@ -28,12 +28,10 @@ module.exports = {
         if(Matches.length == 0){
             return interaction.editReply(`No matches played in ${currentSeason}... *yet*`);
         }
-        console.log(Matches)
         var lastMatch = Matches.reduce(function(prev, current) {
             return (prev.actual_time > current.actual_time) ? prev : current
         });
         lastMatch = lastMatch.key;
-        console.log(lastMatch)
         var Match = await fetch(`${apiURL}/match/${lastMatch}?${auth}`).then(response => response.json());
         for(x = 0; x < Match.alliances.blue.team_keys.length; x++){
             stor = Match.alliances.blue.team_keys[x].slice(3)
