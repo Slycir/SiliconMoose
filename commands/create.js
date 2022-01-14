@@ -7,10 +7,10 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('create')
         .setDescription('Create a new command')
-        .addStringOption(option => option.setName('command-name').setDescription('Enter command name( /[name here] )')).setRequired(true)
-        .addStringOption(option => option.setName('command-desc').setDescription('Enter command description')).setRequired(true)
-        .addStringOption(option => option.setName('command-type').setDescription('Enter command type').setChoices([['Link', 'link'], ['Text', 'text']])).setRequired(true)
-        .addStringOption(option => option.setName('command-text').setDescription('Enter command reply text')).setRequired(true)
+        .addStringOption(option => option.setName('command-name').setDescription('Enter command name( /[name here] )'))
+        .addStringOption(option => option.setName('command-desc').setDescription('Enter command description'))
+        .addStringOption(option => option.setName('command-type').setDescription('Enter command type').setChoices([['Link', 'link'], ['Text', 'text']]))
+        .addStringOption(option => option.setName('command-text').setDescription('Enter command reply text'))
         .addStringOption(option => option.setName('command-link').setDescription('If type \`link\`: Enter command reply link'))
         .addStringOption(option => option.setName('command-link-label').setDescription('If type \`link\`: Enter command reply link label')),
     async execute(interaction) {
