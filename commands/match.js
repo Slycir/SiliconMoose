@@ -48,7 +48,7 @@ module.exports = {
         }
         const matchEmbed = new MessageEmbed()
 	        .setColor(color)
-	        .setTitle(`${teamNumber}\'s Last Match`)
+	        .setTitle(`${matchCode}`)
 	        .setURL(`https://thebluealliance.com/match/${matchCode}`)
 	        .addFields(
 		        { name: `Blue Alliance: ${Match.alliances.blue.score}`, value: `${blueTeams}`, inline: true },
