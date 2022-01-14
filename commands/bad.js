@@ -11,7 +11,7 @@ module.exports = {
         .setName('bad')
         .setDescription('Bad idea? clock it in.'),
     async execute(interaction) {
-        bad = fs.readFile('./commands/badidea.txt', err => {
+        bad = fs.readFileSync('./commands/badidea.txt', err => {
             if (err) {
               console.error(err)
             }
