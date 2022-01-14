@@ -1,13 +1,21 @@
 const fs = require('fs')
 const { SlashCommandBuilder } = require('@discordjs/builders');
-var bad = require('./badidea.txt')
+var bad = fs.readFile('./badidea.txt', err => {
+    if (err) {
+      console.error(err)
+    }
+});
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('bad')
         .setDescription('Bad idea? clock it in.'),
     async execute(interaction) {
-        bad = require('./badidea.txt')
+        bad = fs.readFile('./badidea.txt', err => {
+            if (err) {
+              console.error(err)
+            }
+        });
         badCount = parseInt(bad)
         badCount++
         bad = badCount.toString()
