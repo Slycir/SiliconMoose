@@ -59,7 +59,7 @@ module.exports = {
         badCount++
         bad.count = badCount
         reason = interaction.options.getString('what-happened');
-        if(reason != '') {
+        if(reason != null) {
           bad.reasons.push(reason)
         }
         bad = JSON.stringify(bad)
