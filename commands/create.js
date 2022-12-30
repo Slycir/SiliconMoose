@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { setups } = require('./setups.json')
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('discord.js');
 const { Permissions } = require('discord.js');
 
 module.exports = {
@@ -9,7 +9,10 @@ module.exports = {
         .setDescription('Create a new command')
         .addStringOption(option => option.setName('command-name').setDescription('Enter command name( /[name here] )'))
         .addStringOption(option => option.setName('command-desc').setDescription('Enter command description'))
-        .addStringOption(option => option.setName('command-type').setDescription('Enter command type').setChoices([['Link', 'link'], ['Text', 'text']]))
+        .addStringOption(option => option.setName('command-type').setDescription('Enter command type').addChoices(
+            { name: 'Text', value: 'text' },
+            { name: 'Link', value: 'link' },
+        ))
         .addStringOption(option => option.setName('command-text').setDescription('Enter command reply text'))
         .addStringOption(option => option.setName('command-link').setDescription('If type \`link\`: Enter command reply link'))
         .addStringOption(option => option.setName('command-link-label').setDescription('If type \`link\`: Enter command reply link label')),

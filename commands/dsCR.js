@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');   //Command made by Otto
+const { SlashCommandBuilder } = require('discord.js');   //Command made by Otto
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {

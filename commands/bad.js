@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('discord.js');
 const { MessageEmbed } = require('discord.js');
 var bad = fs.readFile('./commands/badidea.json', err => {
     if (err) {

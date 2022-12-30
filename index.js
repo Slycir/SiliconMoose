@@ -4,10 +4,10 @@ const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
   })
-const { Client, Collection, Intents } = require('discord.js');
+const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token, conPre } = require('./config.json');
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 runScript('./deploy-commands.js', function (err) {
     if (err) throw err;
