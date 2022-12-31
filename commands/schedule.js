@@ -22,7 +22,7 @@ module.exports = {
             option
             .setName('channel')
             .setDescription('Enter channel')
-            .addChannelTypes(ChannelType.GuildText)
+            .addChannelTypes(ChannelType.GuildText, ChannelType.GuildAnnouncement)
             .setRequired(true)
             )
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels),
