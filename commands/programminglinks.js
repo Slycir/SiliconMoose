@@ -1,32 +1,32 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { MessageActionRow, MessageButton } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('programminglinks')
         .setDescription('Important programming links.'),
     async execute(interaction) {
-        const row = new MessageActionRow()
+        const row = new ActionRowBuilder()
             .addComponents(
-                new MessageButton()
+                new ButtonBuilder()
                     .setLabel('Programming Principles')
-                    .setStyle('LINK')
+                    .setStyle(ButtonStyle.Link)
                     .setURL('https://drive.google.com/drive/folders/1IJ830rFMH7MGcN0iyvXGcH9FLVAWVQpW?usp=sharing'),
-                new MessageButton()
+                new ButtonBuilder()
                     .setLabel('WPILib')
-                    .setStyle('LINK')
+                    .setStyle(ButtonStyle.Link)
                     .setURL('https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html'),
-                new MessageButton()
+                new ButtonBuilder()
                     .setLabel('Game Tools')
-                    .setStyle('LINK')
+                    .setStyle(ButtonStyle.Link)
                     .setURL('https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/frc-game-tools.html'),
-                new MessageButton()
+                new ButtonBuilder()
                     .setLabel('PathPlanner')
-                    .setStyle('LINK')
+                    .setStyle(ButtonStyle.Link)
                     .setURL('https://github.com/mjansen4857/pathplanner'),
-                new MessageButton()
+                new ButtonBuilder()
                     .setLabel('GitHub')
-                    .setStyle('LINK')
+                    .setStyle(ButtonStyle.Link)
                     .setURL('https://github.com/MetalMooseFRC')
             );
         return interaction.reply({ content: 'Programming links:', components: [row]});
