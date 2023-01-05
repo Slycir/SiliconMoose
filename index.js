@@ -48,7 +48,7 @@ for (const file of commandFiles) {
 client.once('ready', () => {
 	console.log('Ready!');
     sendRefresh()
-    client.user.setActivity('in FRC!', { type: ActivityType.Competing })
+    client.user.setActivity('FRC!', { type: ActivityType.Competing })
 });
 
 client.on('interactionCreate', async interaction => {

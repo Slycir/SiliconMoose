@@ -29,7 +29,11 @@ module.exports = {
                     new ButtonBuilder()
                         .setLabel('PathPlannerLib')
                         .setStyle(ButtonStyle.Link)
-                        .setURL('https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json')
+                        .setURL('https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json'),
+                    new ButtonBuilder()
+                        .setLabel('PhotonVision')
+                        .setStyle(ButtonStyle.Link)
+                        .setURL('https://maven.photonvision.org/repository/internal/org/photonvision/PhotonLib-json/1.0/PhotonLib-json-1.0.json')
                 );
             return interaction.reply({ content: 'Vendor library links: (right click -> copy link)', components: [row]});
         }
