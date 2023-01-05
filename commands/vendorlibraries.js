@@ -25,6 +25,6 @@ module.exports = {
                     .setStyle(ButtonStyle.Link)
                     .setURL('https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json')
             );
-        return interaction.reply({ content: 'Programming links:', components: [row]});
+        return interaction.reply({ content: 'Vendor library links: (right click + copy link)', components: [row]});
     }
 };
