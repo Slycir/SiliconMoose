@@ -4,7 +4,7 @@ const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
   })
-const { Client, Collection, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, GatewayIntentBits, ActivityType } = require('discord.js');
 const { token, conPre } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -48,6 +48,7 @@ for (const file of commandFiles) {
 client.once('ready', () => {
 	console.log('Ready!');
     sendRefresh()
+    client.user.setActivity('in FRC!', { type: ActivityType.Competing })
 });
 
 client.on('interactionCreate', async interaction => {
